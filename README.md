@@ -7,7 +7,7 @@
 ##  Executive Summary
 **SecureData-Flow** is a robust Python-based ETL pipeline designed to bridge the gap between Data Engineering and Cybersecurity. While most pipelines focus solely on movement, this project implements **Zero-Trust principles** by automating data privacy (PII masking) at the point of ingestion and providing cloud-ready IAM access controls.
 
-## 🛠️ Architecture & Tech Stack
+##  Architecture & Tech Stack
 - **Engine:** Python 3.x utilizing `Pandas` for high-performance data transformation.
 - **Testing:** `Unittest` framework for automated validation of security logic.
 - **Cloud Security:** AWS-standard JSON IAM policies for granular resource control.
@@ -25,7 +25,7 @@
 ├── logs/               # Automated pipeline execution history
 ├── scripts/            # Core ETL and Masking logic
 └── tests/              # Automated unit tests for security validation
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Python 3.8+

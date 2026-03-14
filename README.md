@@ -1,24 +1,39 @@
-# Secure Data Pipeline 
+# SecureData-Flow: End-to-End Secure ETL Pipeline 
 
-A Python-based ETL (Extract, Transform, Load) pipeline built with a **Security-First** mindset. This project demonstrates the ability to process data while strictly adhering to data privacy standards.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python: 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![Security: PII-Protected](https://img.shields.io/badge/Security-PII--Protected-green.svg)](#-security-first-features)
 
-##  Overview
-This pipeline fetches data from external APIs, processes it using **Pandas**, and implements automated **PII (Personally Identifiable Information) masking** to ensure sensitive user data is never stored in plain text.
+##  Executive Summary
+**SecureData-Flow** is a robust Python-based ETL pipeline designed to bridge the gap between Data Engineering and Cybersecurity. While most pipelines focus solely on movement, this project implements **Zero-Trust principles** by automating data privacy (PII masking) at the point of ingestion and providing cloud-ready IAM access controls.
 
-##  Tech Stack
-- **Language:** Python 3.x
-- **Libraries:** Pandas, Requests
-- **Security:** Data Masking, Environment Variable management, `.gitignore` protection
+## 🛠️ Architecture & Tech Stack
+- **Engine:** Python 3.x utilizing `Pandas` for high-performance data transformation.
+- **Testing:** `Unittest` framework for automated validation of security logic.
+- **Cloud Security:** AWS-standard JSON IAM policies for granular resource control.
+- **Automation:** Modular design ready for integration with AWS Lambda or GitHub Actions.
 
-##  Key Security Features
-- **PII Redaction:** Automatically masks emails and sensitive coordinates before local storage.
-- **Environment Isolation:** Designed to use `.env` files for API credentials (preventing credential leakage).
-- **Audit Logs:** Generates timestamps for every successful data ingestion.
+##  Security-First Features
+- **Automated PII Redaction:** High-risk fields (Emails, Geolocation) are masked using custom regex-based logic before being persisted to disk.
+- **Environment Isolation:** Pre-configured `.gitignore` to prevent accidental leakage of sensitive credentials or logs.
+- **Access Governance:** Includes pre-defined IAM policies to enforce the **Principle of Least Privilege (PoLP)** for S3 bucket storage.
 
 ##  Project Structure
-- `scripts/`: Core Python logic.
-- `data/`: (Local only) Secure storage for processed files.
-- `logs/`: Pipeline execution history.
+```text
+├── data/               # Secure local storage (git-ignored)
+├── iam_policies/       # AWS-standard JSON access controls
+├── logs/               # Automated pipeline execution history
+├── scripts/            # Core ETL and Masking logic
+└── tests/              # Automated unit tests for security validation
+## 🚀 Getting Started
 
----
-*Created by D.O OTIENO - Data Engineering & Cybersecurity Specialist*
+### Prerequisites
+- Python 3.8+
+- Virtual environment (recommended)
+
+### Installation & Execution
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/otieno-creator/secure-data-pipeline.git
+   cd secure-data-pipeline
+...
